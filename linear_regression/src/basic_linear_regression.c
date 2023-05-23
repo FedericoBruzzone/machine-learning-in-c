@@ -1,3 +1,6 @@
+#include "basic_linear_regression.h" 
+#include "loss.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -13,11 +16,12 @@ float training_set[ROWS][COLS] = {
 };
 #define TRAINING_SET_SIZE (sizeof(training_set) / sizeof(training_set[0]))
 
-float costf(float weight) 
+
+float cost_function(float weight, float (*loss)(float y1, float y2)) 
 {
     float cost = 0.0f;    
     for (size_t i = 0; i < TRAINING_SET_SIZE; ++i) {
-        printf("%f - %f\n", training_set[i][0], training_set[i][1]); 
+        
     }
 
     return 0.0f;
@@ -32,9 +36,9 @@ int main(void)
 {
     srand(time(0));
     float weight = generate_rand_float()*10.0f;
-    float rate = 1e-1;
+    /* float rate = 1e-1; */
    
-    printf("cost = %f", costf(weight));
+    printf("cost = %f\n", cost_function(weight, absolute_loss));
     printf("sizeof(training_set) = %lu", TRAINING_SET_SIZE);
 
     return 0;
