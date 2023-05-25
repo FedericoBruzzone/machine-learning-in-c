@@ -4,6 +4,7 @@ set -xe
 
 # CFLAGS="-Wall -Wextra -Werror -Wpedantic -std=c99"
 CFLAGS="-Wall -Wextra -std=c99"
+# -o3 -mfma
 LIBS="-lm"
 
 INC_LOSS_DIR="-I loss"
