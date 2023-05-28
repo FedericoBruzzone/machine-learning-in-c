@@ -1,19 +1,27 @@
-#ifndef LOSS_
+#ifndef LOSS_FUNCTION_
 #define LOSS_ 
 
-#include <stdlib.h>
 #include <math.h>
 
-float absolute_loss(float y1, float y2);
+// ===== Regression losses =====
+float absolute_loss(float y_hat, float y);
+float quadratic_loss(float y_hat, float y);
 
 #endif // LOSS_ 
 
-#ifndef LOSS_IMPLEMENTATION_
-#define LOSS_IMPLEMENTATION_
+#ifdef LOSS_FUNCTION_IMPLEMENTATION_
 
-float absolute_loss(float y1, float y2) {
-    return fabs(y1 - y2);
+// ===== Regression losses =====
+float absolute_loss(float y_hat, float y) {
+    return fabs(y_hat - y);
 }
+
+float quadratic_loss(float y_hat, float y) {
+    return pow(y_hat - y, 2);
+}
+
+// ===== Classification losses =====
+// TODO
 
 #endif // LOSS_IMPLEMENTATION_
 

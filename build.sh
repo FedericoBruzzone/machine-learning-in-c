@@ -3,7 +3,7 @@
 set -xe
 
 # CFLAGS="-Wall -Wextra -Werror -Wpedantic -std=c99"
-CFLAGS="-Wall -Wextra -std=c99"
+CFLAGS="-Wall -Wextra -std=c99 -mfma"
 # -o3 -mfma
 LIBS="-lm"
 

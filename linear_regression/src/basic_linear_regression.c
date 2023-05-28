@@ -1,4 +1,6 @@
 #include "basic_linear_regression.h" 
+
+#define LOSS_FUNCTION_IMPLEMENTATION_
 #include "loss.h"
 
 #include <stdio.h>
@@ -17,7 +19,7 @@ float training_set[ROWS][COLS] = {
 #define TRAINING_SET_SIZE (sizeof(training_set) / sizeof(training_set[0]))
 
 
-float cost_function(float weight, float (*loss)(float y1, float y2)) 
+float cost_function(float weight, float (*loss)(float y_hat, float y)) 
 {
     float cost = 0.0f;    
     for (size_t i = 0; i < TRAINING_SET_SIZE; ++i) {
