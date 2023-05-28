@@ -18,17 +18,6 @@ float training_set[ROWS][COLS] = {
 };
 #define TRAINING_SET_SIZE (sizeof(training_set) / sizeof(training_set[0]))
 
-
-float cost_function(float weight, float (*loss)(float y_hat, float y)) 
-{
-    float cost = 0.0f;    
-    for (size_t i = 0; i < TRAINING_SET_SIZE; ++i) {
-        
-    }
-
-    return 0.0f;
-}
-
 float generate_rand_float(void) 
 {
     return (float)rand() / (float)RAND_MAX;
@@ -38,10 +27,29 @@ int main(void)
 {
     srand(time(0));
     float weight = generate_rand_float()*10.0f;
-    /* float rate = 1e-1; */
+    float rate = 1e-1;
    
-    printf("cost = %f\n", cost_function(weight, absolute_loss));
-    printf("sizeof(training_set) = %lu", TRAINING_SET_SIZE);
+    printf("Mean absolute error = %f with weight = %f\n", 
+            mean_absolute_error(TRAINING_SET_SIZE, training_set, weight), 
+            weight);
+    printf("Mean squared error = %f with weight = %f\n", 
+            mean_squared_error(TRAINING_SET_SIZE, training_set, weight), 
+            weight);
+
+    printf("Derivative cost with quadratic_loss = %f with weight = %f\n", 
+            derivative_cost_function(TRAINING_SET_SIZE, training_set, quadratic_loss, weight), 
+            weight);
+    
+    printf("---------------------------------------------\n");
+
+    for(size_t i = 0; i < 50; ++i) {
+        float cost = mean_squared_error(TRAINING_SET_SIZE, training_set, weight);
+        float derivative_cost = derivative_cost_function(TRAINING_SET_SIZE, training_set, quadratic_loss, weight);
+        printf("Cost = %f, weight = %f\n", cost, weight);
+        weight -= rate * derivative_cost;
+    }
+    
+    printf("Weight = %f\n", weight);
 
     return 0;
 }

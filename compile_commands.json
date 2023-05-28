@@ -85,11 +85,11 @@
       "-x",
       "c",
       "-o",
-      "/tmp/basic_linear_regression-39cff8.o",
+      "/tmp/basic_linear_regression-6f9ba9.o",
       "linear_regression/src/basic_linear_regression.c"
     ],
     "directory": "/home/federicobruzzoneplasma/Documents/machine-learning-in-c",
     "file": "/home/federicobruzzoneplasma/Documents/machine-learning-in-c/linear_regression/src/basic_linear_regression.c",
-    "output": "/tmp/basic_linear_regression-39cff8.o"
+    "output": "/tmp/basic_linear_regression-6f9ba9.o"
   }
 ]
