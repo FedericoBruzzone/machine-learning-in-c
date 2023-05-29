@@ -90,8 +90,6 @@ float mean_absolute_error(Matrix *m, float weight);
 
 
 
-
-
 #ifdef LOSS_FUNCTION_IMPLEMENTATION_
 
 float derivative_loss(float y_hat, float y, loss_function loss)
@@ -131,7 +129,7 @@ float cost_function(Matrix *m, loss_function loss, float weight)
 {
     float cost = 0.0f;    
     for (size_t i = 0; i < m->rows; ++i) {
-        float y_hat = weight * m->data[i][0] + bias;
+        float y_hat = weight * m->data[i][0];
         float y = m->data[i][1];
         cost += loss(y_hat, y); 
     }
@@ -150,4 +148,3 @@ float mean_absolute_error(Matrix *m, float weight)
 }
 
 #endif // LOSS_IMPLEMENTATION_
-
