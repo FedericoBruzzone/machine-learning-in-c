@@ -6,11 +6,12 @@
       "-Wall",
       "-Wextra",
       "-std=c99",
+      "-o3",
       "-mfma",
       "-I",
       "linear_regression/inc",
       "-I",
-      "loss",
+      "util",
       "-o",
       "build/basic_linear_regression",
       "linear_regression/src/basic_linear_regression.c"
@@ -59,7 +60,7 @@
       "-I",
       "linear_regression/inc",
       "-I",
-      "loss",
+      "util",
       "-internal-isystem",
       "/usr/lib/llvm-14/lib/clang/14.0.0/include",
       "-internal-isystem",
@@ -85,11 +86,11 @@
       "-x",
       "c",
       "-o",
-      "/tmp/basic_linear_regression-6f9ba9.o",
+      "/tmp/basic_linear_regression-16e86f.o",
       "linear_regression/src/basic_linear_regression.c"
     ],
     "directory": "/home/federicobruzzoneplasma/Documents/machine-learning-in-c",
     "file": "/home/federicobruzzoneplasma/Documents/machine-learning-in-c/linear_regression/src/basic_linear_regression.c",
-    "output": "/tmp/basic_linear_regression-6f9ba9.o"
+    "output": "/tmp/basic_linear_regression-16e86f.o"
   }
 ]
