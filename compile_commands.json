@@ -79,6 +79,7 @@
       "-fdebug-compilation-dir=/home/federicobruzzoneplasma/Documents/machine-learning-in-c",
       "-ferror-limit",
       "19",
+      "-fmessage-length=237",
       "-fgnuc-version=4.2.1",
       "-fcolor-diagnostics",
       "-faddrsig",
@@ -86,11 +87,11 @@
       "-x",
       "c",
       "-o",
-      "/tmp/basic_linear_regression-16e86f.o",
+      "/tmp/basic_linear_regression-34b9cf.o",
       "linear_regression/src/basic_linear_regression.c"
     ],
     "directory": "/home/federicobruzzoneplasma/Documents/machine-learning-in-c",
     "file": "/home/federicobruzzoneplasma/Documents/machine-learning-in-c/linear_regression/src/basic_linear_regression.c",
-    "output": "/tmp/basic_linear_regression-16e86f.o"
+    "output": "/tmp/basic_linear_regression-34b9cf.o"
   }
 ]
